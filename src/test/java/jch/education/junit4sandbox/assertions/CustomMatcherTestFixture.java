@@ -106,6 +106,8 @@ public class CustomMatcherTestFixture {
 
         private Integer z = null;
 
+        public Point3DMatcher() {}
+
         Point3DMatcher withX(int x) {
         	this.x = new Integer(x);
         	return this;
@@ -126,7 +128,7 @@ public class CustomMatcherTestFixture {
         	return matches(this.x, point.x) && matches(this.y, point.y) && matches(this.z, point.z);
         }
 
-        private boolean matches(Integer expected, int actual) {
+        private static boolean matches(Integer expected, int actual) {
         	if (expected == null) {
         		// null value means there is no expectation for the given actual
         		// value,
